@@ -7,23 +7,10 @@ def write_report(report):
 
 
 
-# Press a
-write_report(NULL_CHAR*2+chr(78)+NULL_CHAR*5)
+x = 80
 
-# Press a
-write_report(NULL_CHAR*2+chr(78)+NULL_CHAR*5)
-
-# Press a
-write_report(NULL_CHAR*2+chr(78)+NULL_CHAR*5)
-
-# Press a
-write_report(NULL_CHAR*2+chr(78)+NULL_CHAR*5)
-
-# Press a
-write_report(NULL_CHAR*2+chr(78)+NULL_CHAR*5)
-
-# Press a
-write_report(NULL_CHAR*2+chr(78)+NULL_CHAR*5)
+for i in range(1, 5):
+	write_report(NULL_CHAR*2+chr(x)+NULL_CHAR*5)
 
 write_report(NULL_CHAR*8)
 
