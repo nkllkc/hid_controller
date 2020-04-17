@@ -306,3 +306,155 @@ ls
 cd
 ls
 ./gadget_creator.sh 
+cd
+ls
+./gadget_creator.sh 
+nano gadget_creator.sh 
+./disable_and_clean_gadget.sh airmochi_emulated_keyboard
+./gadget_creator.sh 
+ls
+ls main.c 
+nano main.c 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nna RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+echo "# rpi_keyboard" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:nkllkc/rpi_keyboard.git
+git config --global user.email "nlukic@usc.edu"
+git config --global user.name "Nikola"
+git commit -m "first commit"
+git push -u origin master
+ssh-keygen
+sudo apt-get install xclip
+xclip -sel clip < ~/.ssh/id_rsa.pub
+xclip-copyfile -sel clip < ~/.ssh/id_rsa.pub
+nano ~/.ssh/id_rsa.pub 
+echo ~/.ssh/id_rsa.pub 
+tr cat 
+cat ~/.ssh/id_rsa.pub 
+git push -u origin master
+git add --all
+git commit -m 'Add contents.'
+git push
+clear
+git pull
+cd controller/
+python3 test.py 
+python3 test.py 
+cd ..
+git pull
+ls
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+git status
+git add --all
+git commit
+git commit -m 'a'
+git push
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+ls
+ls
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+ls /dev/hidg0 
+nano gadget_creator.sh 
+./disable_and_clean_gadget.sh 
+./disable_and_clean_gadget.sh airmochi_emulated_keyboard
+./gadget_creator.sh 
+python RPi_Keyboard_Example.py 
+nano gadget_creator.sh 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+[A
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 
+nano RPi_Keyboard_Example.py 
+python RPi_Keyboard_Example.py 

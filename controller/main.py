@@ -75,8 +75,8 @@ def execute_mouse_command(xPercentage, yPercentage):
 	global currentX
 	global currentY
 	
-	actualX = int(xPercentage * WIDTH)
-	actualY = int(yPercentage * HEIGHT) 
+	actualX = int(round(xPercentage * WIDTH))
+	actualY = int(round(yPercentage * HEIGHT))
 
 	diffX = int(abs(actualX - currentX))
 	diffY = int(abs(actualY - currentY))
