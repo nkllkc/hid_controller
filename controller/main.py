@@ -110,15 +110,31 @@ def connect():
 def disconnect():
 	logging.error('Disconnected from the GCP GAE.')
 
+# event_console2server
+@sio.on('event_server2client')
+def event_server2client(data):
+	event = Event(data)
+
+	if event.type != 'mouse_click':
+		logging.error("WRONG CALLBACK! Non mouse_click in event_server2client")
+		return
+	
+	logging.debug(data)
+	logging.debug("Event.Type: -%s-", event.type)
+	
+	execute_mouse_command(event.xPercentage, event.xPercentage)
+
 @sio.on('event_server2client_keyboard')
 def event_server2client_keyboard(data):
-
 	event = Event(data)
+
+	if event.type == 'mouse_click':
+		logging.error("WRONG CALLBACK! mouse_click in event_server2client_keyboard")
+		return
 
 	logging.debug(data)
 	logging.debug("key: -%s-", event.type)
-	if event.type == 'mouse_click':
-		execute_mouse_command(event.diffX, event.diffY)
+
 
 def init_maps():
 	global mappings
@@ -138,26 +154,4 @@ if __name__== "__main__":
 
 	sio.connect('http://softarch.usc.edu:3000/')
 	sio.wait()
-
-	# for line in fileinput.input():
-	# 	if line.rstrip() == "exit":
-	# 		break
-	# 	for char in line.rstrip():
-
-	#                 string = NULL_CHAR * 2 + chr(mappings[char]) + NULL_CHAR * 5
-			# if char.islower():
-			# 	string = NULL_CHAR * 2 + chr(mappings[char]) + NULL_CHAR * 5
-			# elif char.isupper():
-			# 	string = chr(32) + NULL_CHAR + chr(mappings[char.lower()]) + NULL_CHAR * 5
-			# else:
-			# 	print("ELSE")
-			# 	continue
-			# string = string + NULL_CHAR + mappings[char] + NULL_CHAR * 5
-			# print("+")
-			# write_report(string)
-
-			# output_file.write(string.encode())
-			# print(char, ord(char))
-
-	# output_file.close()
 
