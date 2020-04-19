@@ -18,8 +18,9 @@ echo 250 > configs/c.1/MaxPower
 
 # Add functions here
 mkdir -p functions/hid.usb0
-echo 1 > functions/hid.usb0/protocol
-echo 1 > functions/hid.usb0/subclass
+
+echo 2 > functions/hid.usb0/protocol
+echo 0 > functions/hid.usb0/subclass
 echo 8 > functions/hid.usb0/report_length
 
 # Dell keyboard. 
