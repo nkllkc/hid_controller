@@ -3,3 +3,5 @@ HID_Descriptor_tool/*
 
 */.cache
 
+build/*
+build
