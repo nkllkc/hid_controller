@@ -1,4 +1,6 @@
-#!/bin/bash
+ #!/bin/bash
+./cleaner airmochi_emulated_keyboard
+
 cd /sys/kernel/config/usb_gadget/
 mkdir -p airmochi_emulated_keyboard
 cd airmochi_emulated_keyboard
@@ -27,4 +29,3 @@ ln -s functions/hid.usb0 configs/c.1/
 # End functions
 
 ls /sys/class/udc > UDC
-
