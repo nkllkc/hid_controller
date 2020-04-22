@@ -154,4 +154,3 @@ if __name__== "__main__":
 
 	sio.connect('http://softarch.usc.edu:3000/')
 	sio.wait()
-
