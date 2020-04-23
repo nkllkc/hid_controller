@@ -120,11 +120,11 @@ if __name__== "__main__":
 	
 	calibrate_pointer()
 
-	# for line in fileinput.input():
-	# 	try:
-			# argv = line.split(' ')
-	x = float(argv[1])
-	y = float(argv[2])
-	execute_mouse_command(x, y, argv[3] == 'y')
-		# except:
-			# break
+	for line in fileinput.input():
+		try:
+			args = line.split(' ')
+			x = float(args[1])
+			y = float(args[2])
+			execute_mouse_command(x, y, args[3] == 'y')
+		except:
+			break
