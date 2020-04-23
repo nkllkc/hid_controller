@@ -40,6 +40,7 @@ def event_server2client(data):
 	logging.debug(data)
 	logging.debug("Event.Type: -%s-", event.type)
 	
+	# TODO: Add tracking, not just clicking.
 	eventProcessor.executeMouseCommand(event.xPercentage, event.xPercentage, True)
 
 @sio.on('event_server2client_keyboard')
