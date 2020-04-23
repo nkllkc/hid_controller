@@ -1,5 +1,5 @@
 import json
-from .configs import *
+from configs import *
 
 def loadMappings(mappingFile = 'keycodes.json', shiftOnFile = 'shift_on.nfo'):
     with open(mappingFile) as json_file:
@@ -17,7 +17,7 @@ class EventProcessor:
         self.mappings = mappings
         self.shiftOn = shiftOn
         self.logging = logging
-        self.hidFile
+        self.hidFile = hidFile
         if calibrate:
             self.calibrate_pointer()
         super().__init__()

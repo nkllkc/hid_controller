@@ -5,7 +5,7 @@ import json
 
 import fileinput
 
-from .processing import *
+from processing import *
 
 # Set the appropriate log level.
 logging.basicConfig(level=logging.DEBUG)
