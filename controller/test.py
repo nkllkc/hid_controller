@@ -20,15 +20,25 @@ NULL_REPORT = NULL_CHAR * 8
 WIDTH = 48
 HEIGHT = 86
 
-RIGHT_ARROW = 79
-LEFT_ARROW = 80
-DOWN_ARROW = 81
-UP_ARROW = 82
+# Keypads 6, 4, 2, 8.
+# 
+# Here yu can find more about how this works: 
+# https://support.apple.com/guide/mac-help/control-the-pointer-using-mouse-keys-mh27469/mac
+RIGHT_ARROW = 94
+LEFT_ARROW = 92
+DOWN_ARROW = 90
+UP_ARROW = 96
+TOUCH = 93 # Keypad 5.
+PRESS = 98 # Keypad 0.
+RELEASE = 99 # Keypad .(dot).
 
-RIGHT_STEP = NULL_CHAR * 2 + chr(RIGHT_ARROW) + NULL_CHAR * 5 + NULL_REPORT
-LEFT_STEP = NULL_CHAR * 2 + chr(LEFT_ARROW) + NULL_CHAR * 5 + NULL_REPORT
-DOWN_STEP = NULL_CHAR * 2 + chr(DOWN_ARROW) + NULL_CHAR * 5 + NULL_REPORT
-UP_STEP = NULL_CHAR * 2 + chr(UP_ARROW) + NULL_CHAR * 5  + NULL_REPORT
+RIGHT_STEP_REPORT = NULL_CHAR * 2 + chr(RIGHT_ARROW) + NULL_CHAR * 5 + NULL_REPORT
+LEFT_STEP_REPORT = NULL_CHAR * 2 + chr(LEFT_ARROW) + NULL_CHAR * 5 + NULL_REPORT
+DOWN_STEP_REPORT = NULL_CHAR * 2 + chr(DOWN_ARROW) + NULL_CHAR * 5 + NULL_REPORT
+UP_STEP_REPORT = NULL_CHAR * 2 + chr(UP_ARROW) + NULL_CHAR * 5  + NULL_REPORT
+TOUCH_REPORT = NULL_CHAR * 2 + chr(TOUCH) + NULL_CHAR * 5  + NULL_REPORT
+PRESS_REPORT = NULL_CHAR * 2 + chr(PRESS) + NULL_CHAR * 5  + NULL_REPORT
+RELEASE_REPORT = NULL_CHAR * 2 + chr(RELEASE) + NULL_CHAR * 5  + NULL_REPORT
 
 shift_on = set()
 mappings = {}
@@ -50,9 +60,9 @@ def calibrate_pointer():
 	currentY = 0
 
 	for i in range (0, WIDTH):
-		write_report(LEFT_STEP)
+		write_report(LEFT_STEP_REPORT)
 	for i in range (0, HEIGHT):
-		write_report(UP_STEP)	
+		write_report(UP_STEP_REPORT)	
 
 
 def execute_keyboard_command(key):
@@ -72,7 +82,7 @@ def execute_keyboard_command(key):
 	write_report(string, True)
 
 
-def execute_mouse_command(xPercentage, yPercentage):
+def execute_mouse_command(xPercentage, yPercentage, buttonDown, buttonUp):
 	global currentX
 	global currentY
 	
@@ -82,19 +92,26 @@ def execute_mouse_command(xPercentage, yPercentage):
 	diffX = int(abs(newX - currentX))
 	diffY = int(abs(newY - currentY))
 
-	xMove = RIGHT_STEP
+	xMove = RIGHT_STEP_REPORT
 	if newX <= currentX:
-		xMove = LEFT_STEP
+		xMove = LEFT_STEP_REPORT
 	
-	yMove = DOWN_STEP
+	yMove = DOWN_STEP_REPORT
 	if newY <= currentY:
-		yMove = UP_STEP
+		yMove = UP_STEP_REPORT
 	
 	for i in range(0, diffX):
 		write_report(xMove)
 
 	for i in range(0, diffY):
 		write_report(yMove)
+
+	if buttonDown and buttonUp:
+		write_report(TOUCH_REPORT)
+	elif buttonDown:
+		write_report(PRESS_REPORT)
+	elif buttonUp:
+		write_report(RELEASE_REPORT)
 	
 	currentY = newY
 	currentX = newX
@@ -108,6 +125,12 @@ if __name__== "__main__":
 			args = line.split(' ')
 			x = float(args[0])
 			y = float(args[1])
-			execute_mouse_command(x, y)
+			buttonDown = False
+			buttonUp = False
+			if args[2] == 'y':
+				buttonDown = True
+			if args[3] == 'y':
+				buttonUp = True
+			execute_mouse_command(x, y, buttonDown, buttonUp)
 		except:
 			break
