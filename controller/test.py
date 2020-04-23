@@ -85,6 +85,8 @@ def execute_keyboard_command(key):
 
 
 def execute_mouse_command(xPercentage, yPercentage, click):
+	print("execute_mouse_command")
+
 	global currentX
 	global currentY
 	
@@ -123,8 +125,12 @@ if __name__== "__main__":
 	for line in fileinput.input():
 		try:
 			args = line.split(' ')
-			x = float(args[1])
-			y = float(args[2])
-			execute_mouse_command(x, y, args[3] == 'y')
+			print(args)
+			x = float(args[0])
+			y = float(args[1])
+			print(x)
+			print(y)
+			print(args[2][0] == 'y')
+			execute_mouse_command(x, y, args[2][0] == 'y')
 		except:
 			break
