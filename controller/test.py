@@ -6,6 +6,8 @@ import json
 
 import fileinput
 
+from sys import argv
+
 # Set the appropriate log level.
 logging.basicConfig(level=logging.DEBUG)
 
@@ -121,17 +123,17 @@ if __name__== "__main__":
 	
 	calibrate_pointer()
 
-	for line in fileinput.input():
-		try:
-			args = line.split(' ')
-			x = float(args[0])
-			y = float(args[1])
-			buttonDown = False
-			buttonUp = False
-			if args[2] == 'y':
-				buttonDown = True
-			if args[3] == 'y':
-				buttonUp = True
-			execute_mouse_command(x, y, buttonDown, buttonUp)
-		except:
-			break
+	# for line in fileinput.input():
+	# 	try:
+			# argv = line.split(' ')
+	x = float(argv[0])
+	y = float(argv[1])
+	buttonDown = False
+	buttonUp = False
+	if argv[2] == 'y':
+		buttonDown = True
+	if argv[3] == 'y':
+		buttonUp = True
+	execute_mouse_command(x, y, buttonDown, buttonUp)
+		# except:
+			# break
