@@ -19,6 +19,6 @@ if __name__== "__main__":
 			args = line.split(' ')
 			x = float(args[0])
 			y = float(args[1])
-			eventProcessor.execute_mouse_command(x, y, args[2][0] == 'y')
+			eventProcessor.executeMouseCommand(x, y, args[2][0] == 'y')
 		except:
 			break

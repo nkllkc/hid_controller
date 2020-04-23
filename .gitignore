@@ -3,6 +3,7 @@ HID_Descriptor_tool/*
 
 */.cache
 
-controller/event_type.pyc
+
+controller/*.pyc
 build/*
 build
