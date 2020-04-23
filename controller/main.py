@@ -31,13 +31,13 @@ def disconnect():
 def event_server2client(data):
 	global eventProcessor
 
+	logging.debug(data)
 	event = Event(data)
 
-	if event.type != 'mouse_click':
+	if event.type != 'mouse':
 		logging.error("WRONG CALLBACK! Non mouse_click in event_server2client")
 		return
 	
-	logging.debug(data)
 	logging.debug("Event.Type: -%s-", event.type)
 	
 	# TODO: Add tracking, not just clicking.
@@ -47,7 +47,7 @@ def event_server2client(data):
 def event_server2client_keyboard(data):
 	event = Event(data)
 
-	if event.type == 'mouse_click':
+	if event.type == 'mouse':
 		logging.error("WRONG CALLBACK! mouse_click in event_server2client_keyboard")
 		return
 
