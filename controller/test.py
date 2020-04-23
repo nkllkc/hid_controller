@@ -108,6 +108,7 @@ def execute_mouse_command(xPercentage, yPercentage, buttonDown, buttonUp):
 
 	if buttonDown and buttonUp:
 		write_report(TOUCH_REPORT)
+		write_report(RELEASE_REPORT)
 	elif buttonDown:
 		write_report(PRESS_REPORT)
 	elif buttonUp:
