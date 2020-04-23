@@ -126,13 +126,13 @@ if __name__== "__main__":
 	# for line in fileinput.input():
 	# 	try:
 			# argv = line.split(' ')
-	x = float(argv[0])
-	y = float(argv[1])
+	x = float(argv[1])
+	y = float(argv[2])
 	buttonDown = False
 	buttonUp = False
-	if argv[2] == 'y':
-		buttonDown = True
 	if argv[3] == 'y':
+		buttonDown = True
+	if argv[4] == 'y':
 		buttonUp = True
 	execute_mouse_command(x, y, buttonDown, buttonUp)
 		# except:
