@@ -84,7 +84,7 @@ def execute_keyboard_command(key):
 	write_report(string, True)
 
 
-def execute_mouse_command(xPercentage, yPercentage, buttonDown, buttonUp):
+def execute_mouse_command(xPercentage, yPercentage, click):
 	global currentX
 	global currentY
 	
@@ -108,13 +108,10 @@ def execute_mouse_command(xPercentage, yPercentage, buttonDown, buttonUp):
 	for i in range(0, diffY):
 		write_report(yMove)
 
-	if buttonDown and buttonUp:
+	if click:
+		print("CLICKED")
 		write_report(TOUCH_REPORT)
-		write_report(RELEASE_REPORT)
-	elif buttonDown:
-		write_report(PRESS_REPORT)
-	elif buttonUp:
-		write_report(RELEASE_REPORT)
+
 	
 	currentY = newY
 	currentX = newX
@@ -128,12 +125,6 @@ if __name__== "__main__":
 			# argv = line.split(' ')
 	x = float(argv[1])
 	y = float(argv[2])
-	buttonDown = False
-	buttonUp = False
-	if argv[3] == 'y':
-		buttonDown = True
-	if argv[4] == 'y':
-		buttonUp = True
-	execute_mouse_command(x, y, buttonDown, buttonUp)
+	execute_mouse_command(x, y, argv[3] == 'y')
 		# except:
 			# break
