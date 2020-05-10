@@ -5,8 +5,6 @@ def write_report(report):
     with open('/dev/hidg0', 'rb+') as fd:
         fd.write(report.encode())
 
-
-
 x = 80
 
 write_report(NULL_CHAR*8)
