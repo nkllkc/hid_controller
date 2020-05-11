@@ -1,5 +1,5 @@
  #!/bin/bash
-./cleaner airmochi_emulated_keyboard
+./cleaner.sh airmochi_emulated_keyboard
 
 cd /sys/kernel/config/usb_gadget/
 mkdir -p airmochi_emulated_keyboard

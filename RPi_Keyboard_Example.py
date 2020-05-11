@@ -50,6 +50,7 @@ write_report(NULL_CHAR*8)
 write_report(NULL_CHAR*8)
 
 for i in range(1, 100):
+	print(i)
         write_report(NULL_CHAR*2+chr(x)+NULL_CHAR*5)
 
 write_report(NULL_CHAR*8)
