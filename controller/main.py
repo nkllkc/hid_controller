@@ -39,9 +39,12 @@ def event_server2client(data):
 		return
 	
 	logging.debug("Event.Type: -%s-", event.type)
-	
+	if(event.subtype == 'press'):
+		click= True;
+	else:
+		click = False;
 	# TODO: Add tracking, not just clicking.
-	eventProcessor.executeMouseCommand(event.xPercentage, event.yPercentage, True)
+	eventProcessor.executeMouseCommand(event.xPercentage, event.yPercentage, click)
 
 @sio.on('event_server2client_keyboard')
 def event_server2client_keyboard(data):
@@ -52,13 +55,18 @@ def event_server2client_keyboard(data):
 		return
 
 	logging.debug(data)
-	logging.debug("key: -%s-", event.type)
+	logging.debug("Type: -%s-", event.type)
+	logging.debug("key: -%s-", event.val)
+	eventProcessor.execute_keyboard_command(event.val)
 
+#@sio.on('event_server2client_calibrate')
+#def event_server2client_calibrate(data):
+#	eventProcessor.calibratePointer();
 
 mappings, shiftOn = loadMappings()
 eventProcessor = EventProcessor(mappings, shiftOn, logging)
 
 if __name__== "__main__":
 
-	sio.connect('http://softarch.usc.edu:3000/')
+	sio.connect('http://192.168.1.126:3000/')
 	sio.wait()
